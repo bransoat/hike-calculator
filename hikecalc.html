@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hike Calculator</title>
+    <style>
+      div {
+        background-color: lightblue;
+      }
+    </style>
+    <script>
+    //create the calculator
+    	function calculate()
+   {
+    //set value for pounds and trail
+   	var weight=	document.getElementById("pounds").value;
+     var trail= document.getElementById("trail").value;
+     //do the conversions
+       	var poundstokg = weight / 2.2;
+       	var permin = poundstokg * .07;
+        //get the total
+       	var total = permin * trail;
+        //display
+       	document.getElementById("empty").innerHTML=total
+   }
+    </script>
+  </head>
+  <body>
+  	<p>Enter your weight in pounds (including anything you might be carrying)</p>
+    <!-- dropdown menu -->
+<input type="text" name="pounds" id="pounds"><br>
+ 	<p>Choose a trail</p>
+<select id="trail">
+  <option value=540>Old Rag</option>
+  <option value=90>Hawksbill</option>
+</select>
+<!--button-->
+<button onclick="calculate()">Calculate</button>
+<!--place for the total-->
+	<div id="empty">
+
+	</div>
+  </body>
+</html>
